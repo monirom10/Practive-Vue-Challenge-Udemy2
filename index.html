@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div id="container">
+        <div class="header">
+            <h1>Events</h1>
+        </div>
+        <div class="event-container">
+            <h1>Envet Practive</h1>
+            <hr>
+            <!-- 1. Show an alert (any text of your choice) when the button pressed -->
+            <button class="button1" v-on:click="alert()">Show Alert</button>
+            <hr>
+            <!-- 2. Register the user input on "Keydown" and Output it in the paragraph (hint: event.target.value helps)  -->
+            <input type="text" v-on:keydown="handleInput" v-model="inputValue1" placeholder="Enter text here..." >
+            <p class="button2">OUTPUT: {{ outputValue1 }}</p>
+            <hr>
+            <!-- 3. Repeat 2. but only output the entered value if the ENTER hey was pressed-->
+            <input type="text" v-on:keydown.enter="handleEnter()" v-model="inputValue2" placeholder="Enter text here...">
+            <p class="button3">OUTPUT: {{ outputValue2 }}</p>
+        </div>
+    </div>
+</body>
+<script src="app.js"></script>
+</html>
